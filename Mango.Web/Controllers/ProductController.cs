@@ -63,7 +63,7 @@ public class ProductController : Controller
         ResponseDto response = await _productService.UpdateProductsAsync(productDto);
         if (response != null && response.IsSuccess)
         {
-            TempData["success"] = "Coupon updated successfully";
+            TempData["success"] = "Product updated successfully";
             return RedirectToAction(nameof(ProductIndex));
         }
         else
@@ -89,7 +89,7 @@ public class ProductController : Controller
         ResponseDto response = await _productService.DeleteProductsAsync(productDto.ProductId);
         if (response != null && response.IsSuccess)
         {
-            TempData["success"] = "Coupon deleted successfully";
+            TempData["success"] = "Product deleted successfully";
             return RedirectToAction(nameof(ProductIndex));
         }
         else
